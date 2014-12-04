@@ -1,9 +1,15 @@
-UPDOWN ([U|u][P|p]|[D|d][OWN|own])
-BROCADE_BASE %{SYSLOGTIMESTAMP}:%{LOGLEVEL}:%{program}:
+UPDOWN ([U|u][P|p]|[D|d](OWN|own))
+BROCADE_LOGLEVEL (A|C|D|M|E|I|N|W)
 BROCADE_PORT (Port|Interface ethernet) %{POSINT:unitid}/%{POSINT:slotid}/%{POSINT:portid}
 BROCADE_VLAN VLAN %{POSINT:vlanid}
+BROCADE_STACK [S|s]tack unit %{POSINT:unitid}
+BROCADE_PS Power supply %{POSINT:psid}
+
 BROCADE_STP %{BROCADE_VLAN} %{BROCADE_PORT} STP State \-\> %{WORD:stpstate} \(%{WORD:stpsource}\)
 BROCADE_INTF %{BROCADE_PORT}, state %{UPDOWN:portstate}
-BROCADE_FAN Stack unit %{POSINT:unitid} Fan speed changed automatically to %{POSINT:fanspeed}
-BROCADE_TELNET telnet login by line password from src IP %{IP:srcip}, src MAC %{MAC:srcmac} to %{DATA:loginmode} mode
-BROCADE_LOG ${BROCADE_BASE}
+BROCADE_FAN %{BROCADE_STACK} Fan speed changed automatically to %{POSINT:fanspeed}
+BROCADE_TELNET telnet login by line password from src IP %{IP:srcip}, src MAC %{CISCOMAC:srcmac} to %{DATA:loginmode} mode
+BROCADE_TELNET2 telnet access from src IP %{IP:srcip}, src MAC %{CISCOMAC:srcmac} %{WORD:action}, %{POSINT:attempts} attempt\(s\)
+BROCADE_POE %{BROCADE_STACK} POE\s*%{BROCADE_PS}\s*with %{POSINT:psmwatts} mwatts capacity is %{UPDOWN:psstate}
+
+BROCADE_BASE %{SYSLOGTIMESTAMP:timestamp}:%{BROCADE_LOGLEVEL:loglevel}:(%{WORD:program}:)?
