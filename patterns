@@ -1,0 +1,9 @@
+UPDOWN ([U|u][P|p]|[D|d][OWN|own])
+BROCADE_BASE %{SYSLOGTIMESTAMP}:%{LOGLEVEL}:%{program}:
+BROCADE_PORT (Port|Interface ethernet) %{POSINT:unitid}/%{POSINT:slotid}/%{POSINT:portid}
+BROCADE_VLAN VLAN %{POSINT:vlanid}
+BROCADE_STP %{BROCADE_VLAN} %{BROCADE_PORT} STP State \-\> %{WORD:stpstate} \(%{WORD:stpsource}\)
+BROCADE_INTF %{BROCADE_PORT}, state %{UPDOWN:portstate}
+BROCADE_FAN Stack unit %{POSINT:unitid} Fan speed changed automatically to %{POSINT:fanspeed}
+BROCADE_TELNET telnet login by line password from src IP %{IP:srcip}, src MAC %{MAC:srcmac} to %{DATA:loginmode} mode
+BROCADE_LOG ${BROCADE_BASE}
