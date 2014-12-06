@@ -11,3 +11,7 @@ Dec  4 20:20:05:I:STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (DOT1wTransit
 Dec  4 20:20:03:I:STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (PortDown)
 Apr 26 15:09:51:I:System: Stack unit 1 POE  Power supply 1  with 410000 mwatts capacity is up
 Apr 26 15:10:02:A:System: Stack unit 2 POE  Power supply 2  is down
+System: PoE: Power enabled on port 1/1/43.
+System: PoE: Power disabled on port 1/1/43 because of PD disconnection.
+System: PoE: Released complete power of 8500 mwatts on port 1/1/43.
+System: PoE: Allocated power of 8500 mwatts on port 1/1/43.
