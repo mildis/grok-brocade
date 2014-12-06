@@ -1,4 +1,5 @@
 Dec  4 21:15:13:I:Security: telnet login by line password from src IP 172.17.10.1, src MAC 0009.0fe7.eca7 to USER EXEC mode
+Dec  4 21:15:13:I:Security: telnet logout by line password from src IP 172.17.10.1, src MAC 0009.0fe7.eca7
 Dec  4 21:15:11:I:telnet access from src IP 172.17.10.1, src MAC 0009.0fe7.eca7 rejected, 1 attempt(s)
 Dec  4 21:08:36:W:System:Stack unit 1 Fan speed changed automatically to 1
 Dec  4 21:03:11:W:System:Stack unit 1 Fan speed changed automatically to 2

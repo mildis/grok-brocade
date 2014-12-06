@@ -8,7 +8,7 @@ BROCADE_PS Power supply %{POSINT:psid}
 BROCADE_STP %{BROCADE_VLAN} %{BROCADE_PORT} STP State \-\> %{WORD:stpstate} \(%{WORD:stpsource}\)
 BROCADE_INTF %{BROCADE_PORT}, state %{UPDOWN:portstate}
 BROCADE_FAN %{BROCADE_STACK} Fan speed changed automatically to %{POSINT:fanspeed}
-BROCADE_TELNET telnet login by line password from src IP %{IP:srcip}, src MAC %{CISCOMAC:srcmac} to %{DATA:loginmode} mode
+BROCADE_TELNET telnet %{WORD:action} by line password from src IP %{IP:srcip}, src MAC %{CISCOMAC:srcmac}(?: to %{DATA:loginmode} mode)?
 BROCADE_TELNET2 telnet access from src IP %{IP:srcip}, src MAC %{CISCOMAC:srcmac} %{WORD:action}, %{POSINT:attempts} attempt\(s\)
 BROCADE_POE %{BROCADE_STACK} POE\s*%{BROCADE_PS}\s*with %{POSINT:psmwatts} mwatts capacity is %{UPDOWN:psstate}
 
