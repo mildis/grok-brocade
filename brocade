@@ -1,11 +1,19 @@
 UPDOWN (?:[Uu][Pp]|[Dd](OWN|own))
 BROCADE_LOGLEVEL (?:A|C|D|M|E|I|N|W)
-BROCADE_PORT (?:[Pp]ort|Interface ethernet) %{POSINT:unitid}/%{POSINT:slotid}/%{POSINT:portid}
+BROCADE_PORT1 %{POSINT:unitid}/%{POSINT:slotid}/%{POSINT:portid}
+BROCADE_PORT (?:[Pp]ort|Interface ethernet) %{BROCADE_PORT1}
 BROCADE_VLAN VLAN %{POSINT:vlanid}
 BROCADE_STACK [Ss]tack unit %{POSINT:unitid}
 BROCADE_PS Power supply %{POSINT:psid}
 
-BROCADE_STP %{BROCADE_VLAN} %{BROCADE_PORT} STP State \-\> %{WORD:stpstate} \(%{WORD:stpcause}\)
+
+BROCADE_STPBASE %{BROCADE_VLAN} %{BROCADE_PORT}
+BROCADE_STP1 %{BROCADE_STPBASE} STP State \-\> %{WORD:stpstate} \(%{WORD:stpcause}\)
+BROCADE_STP2 %{BROCADE_STPBASE} Bridge %{GREEDYDATA:bridgeevent} \(%{WORD:stpcause}\)
+BROCADE_STP3 %{BROCADE_VLAN} New(?: RootBridge: %{WORD:stprootbridge})? RootPort: %{BROCADE_PORT1:stprootport} \(%{WORD:stprootcause}\)
+BROCADE_STP4 %{BROCADE_VLAN} Bridge is RootBridge: %{WORD:stprootbridge} \(%{WORD:stprootcause}\)
+BROCADE_STP (?:%{BROCADE_STP1}|%{BROCADE_STP2}|%{BROCADE_STP3}|%{BROCADE_STP4})
+
 BROCADE_INTF %{BROCADE_PORT}, state %{UPDOWN:portstate}
 BROCADE_FAN %{BROCADE_STACK} Fan speed changed automatically to %{POSINT:fanspeed}
 
