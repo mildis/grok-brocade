@@ -19,3 +19,5 @@ STP: VLAN 4094 Port 6/1/2 Bridge TC Event (DOT1wTransition)
 STP: VLAN 4094 New RootBridge: 0000748ef840b800 RootPort: 6/1/1 (BpduRcvd)
 STP: VLAN 4094 New RootPort: 6/1/1 (RootSelection)
 STP: VLAN 4094 Bridge is RootBridge: 0001002438c4ffc0 (PortDown)
+startup-config was changed by  from telnet client 172.17.10.1
+running-config was changed by  from telnet client 172.17.10.1
