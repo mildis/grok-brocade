@@ -5,13 +5,17 @@ Dec  4 21:08:36:W:System:Stack unit 1 Fan speed changed automatically to 1
 Dec  4 21:03:11:W:System:Stack unit 1 Fan speed changed automatically to 2
 Dec  4 20:20:05:I:System: Interface ethernet 4/1/44, state up
 Dec  4 20:20:03:I:System: Interface ethernet 4/1/44, state down
-Dec  4 20:20:05:I:STP: VLAN 4094 Port 4/1/44 STP State -> FORWARDING (DOT1wTransition)
-Dec  4 20:20:05:I:STP: VLAN 4094 Port 4/1/44 STP State -> LEARNING (DOT1wTransition)
-Dec  4 20:20:05:I:STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (DOT1wTransition)
-Dec  4 20:20:03:I:STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (PortDown)
 Apr 26 15:09:51:I:System: Stack unit 1 POE  Power supply 1  with 410000 mwatts capacity is up
 Apr 26 15:10:02:A:System: Stack unit 2 POE  Power supply 2  is down
 System: PoE: Power enabled on port 1/1/43.
 System: PoE: Power disabled on port 1/1/43 because of PD disconnection.
 System: PoE: Released complete power of 8500 mwatts on port 1/1/43.
 System: PoE: Allocated power of 8500 mwatts on port 1/1/43.
+STP: VLAN 4094 Port 4/1/44 STP State -> FORWARDING (DOT1wTransition)
+STP: VLAN 4094 Port 4/1/44 STP State -> LEARNING (DOT1wTransition)
+STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (DOT1wTransition)
+STP: VLAN 4094 Port 4/1/44 STP State -> BLOCKING (PortDown)
+STP: VLAN 4094 Port 6/1/2 Bridge TC Event (DOT1wTransition)
+STP: VLAN 4094 New RootBridge: 0000748ef840b800 RootPort: 6/1/1 (BpduRcvd)
+STP: VLAN 4094 New RootPort: 6/1/1 (RootSelection)
+STP: VLAN 4094 Bridge is RootBridge: 0001002438c4ffc0 (PortDown)
