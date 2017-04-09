@@ -21,3 +21,5 @@ STP: VLAN 4094 New RootPort: 6/1/1 (RootSelection)
 STP: VLAN 4094 Bridge is RootBridge: 0001002438c4ffc0 (PortDown)
 startup-config was changed by  from telnet client 172.17.10.1
 running-config was changed by  from telnet client 172.17.10.1
+Apr  9 18:03:37:I:SNMP: location "Y491" added by  from telnet session
+Apr  9 18:03:17:I:SNMP: location deleted by  from telnet session
